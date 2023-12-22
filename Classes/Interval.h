@@ -16,8 +16,8 @@ public:
     Interval() = default ; /// default constructor
     explicit Interval(const int l, const int h) : low(l), high(h) {} /// parameterized constructor
 
-    int getLow() const {return low ;} /// getter to get the interval low
-    int getHigh() const {return high ;} /// getter to get the interval high
+    [[nodiscard]] int getLow() const {return low ;} /// getter to get the interval low
+    [[nodiscard]] int getHigh() const {return high ;} /// getter to get the interval high
 };
 
 # endif //INTERVAL_H
