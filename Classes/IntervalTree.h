@@ -23,7 +23,7 @@ class IntervalTree {
      *          @code {if the intervals overlap it return true}
      *          @code {if the intervals don't overlap it return false}
      */
-    static bool overlap(const Interval* interval1, const  Interval* interval2) {
+    static bool overlap(const Interval* interval1, const Interval* interval2) {
         /// if the first interval low smaller than or qual second interval high
         /// and the second interval low smaller than or qual first interval high
         /// then the intervals overlap
@@ -95,11 +95,23 @@ public:
     }
 
     /**
-     * \brief search wrapper function to search for the interval
+     * \brief search function to search for the interval
      * \param interval represent the interval which will searched for
      * \return return minimum low that overlaps with the interval (if exists).
      */
-    Interval search(const Interval interval) const{
+    Interval* search(const Interval* interval) const{
+        const auto * traverse = root;
+
+        while (traverse && !overlap(traverse->getInterval(), interval)) {
+            if (traverse->getLeft() && traverse->getLeft()->getMax() >= interval->getLow()) {
+                traverse = traverse->getLeft() ;
+            }
+            else {
+                traverse = traverse->getRight() ;
+            }
+        }
+
+        return traverse == nullptr ? nullptr : traverse->getInterval() ;
     }
 
     /**
