@@ -6,7 +6,7 @@
  *      Class Interval
  *      represent the interval [low, high] e.g. [5, 10]
  * }
- * @authors Mohamed Amir
+ * @author Mohamed Amir
  * @version 1.0
  */
 class Interval {
@@ -14,10 +14,27 @@ class Interval {
 
 public:
     Interval() = default ; /// default constructor
+
+    /**
+     * \brief parameterized constructor to initialize @code {low, high}
+     * \param l the low of the interval
+     * \param h the high of the interval
+     */
     explicit Interval(const int l, const int h) : low(l), high(h) {} /// parameterized constructor
 
-    [[nodiscard]] int getLow() const {return low ;} /// getter to get the interval low
-    [[nodiscard]] int getHigh() const {return high ;} /// getter to get the interval high
+    /**
+     * \brief getter to get the low
+     * \return int represent the low of the interval
+     */
+    [[nodiscard]] int getLow() const {return low ;}
+
+    /**
+     * \brief getter to get the high
+     * \return int represent the high of the interval
+     */
+    [[nodiscard]] int getHigh() const {return high ;}
+
+    ~Interval() = default ; /// default destructor
 };
 
 # endif //INTERVAL_H

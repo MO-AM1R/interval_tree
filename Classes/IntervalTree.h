@@ -9,7 +9,7 @@
  *      represent the interval tree
  *      it has an @see {class Node} @code {root}
  * }
- * @authors Mohamed Amir
+ * @author Mohamed Amir
  * @version 1.0
  */
 class IntervalTree {
@@ -119,6 +119,13 @@ public:
      */
     void inOrder() const {
         inOrder(root);
+    }
+
+    /**
+     * \brief destructor to remove the data from memory
+     */
+    ~IntervalTree() {
+        delete root ;
     }
 };
 
