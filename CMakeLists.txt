@@ -3,4 +3,7 @@ project(Interval_Tree)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Interval_Tree main.cpp)
+add_executable(Interval_Tree main.cpp
+        Classes/IntervalTree.h
+        Classes/Node.h
+        Classes/Interval.h)
