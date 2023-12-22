@@ -19,7 +19,9 @@ class Node {
     Node* left, *right ; /// the left and right children
 
 public:
-    Node() = default ;
+    Node() = default ; /// default constructor
+
+    /// some parameterized constructor
     explicit Node(const Interval interval_) : interval(interval_), max(0), left(nullptr), right(nullptr) {}
     Node(const Interval interval_, const int max) : interval(interval_), max(max), left(nullptr), right(nullptr) {}
     Node(const Interval interval_, const int max, Node* l, Node* r) : interval(interval_), max(max), left(l), right(r) {}
